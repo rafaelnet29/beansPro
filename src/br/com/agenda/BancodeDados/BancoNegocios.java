@@ -15,7 +15,7 @@ public class BancoNegocios {
     private PreparedStatement ps = null;
 
     public BancoNegocios() {
-        conn = new Conexao();
+       conn = new Conexao();
     }
 
     public void inserir(Atributos at) {
@@ -57,12 +57,11 @@ public class BancoNegocios {
             ps.setString(7, at.getSobre());
             ps.setInt(8, at.getId());
 
-            int r = ps.executeUpdate();
-            if (r != 0) {
-                JOptionPane.showMessageDialog(null, "Contato Atualizado!!");
-                ps.close();
-                conn.getConectMySQl().close();
-            }
+            ps.executeUpdate();
+            //ps.close();
+            //c.getConectMySQl().close();
+
+            JOptionPane.showMessageDialog(null, "Contato Atualizado!!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, " Opá! Erro ao atualizar " + ex.getSQLState() + ex.getErrorCode());
         }
@@ -110,7 +109,7 @@ public class BancoNegocios {
                 stmt.close();
                 JOptionPane.showMessageDialog(null, " Agenda apagada! ");
             } else {
-                JOptionPane.showMessageDialog(null, " Problemas na hora de execultar esta ação ", "", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, " Problemas na hora de execultar esta ação ", "" , JOptionPane.WARNING_MESSAGE);
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
