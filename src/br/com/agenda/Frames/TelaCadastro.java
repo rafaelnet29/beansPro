@@ -441,6 +441,7 @@ public final class TelaCadastro extends javax.swing.JFrame {
         atributos.setResi(jFTResidencial.getText());
         atributos.setId(id);
         bNegocio.Atualizar(atributos);
+        Limpar();
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
