@@ -17,7 +17,7 @@ public class BancoNegocios {
     public BancoNegocios() {
        conn = new Conexao();
     }
-
+    //Método para inserir contatos via SQL
     public void inserir(Atributos at) {
         String query = "INSERT INTO usuario(nome,endereco,email,residencial,telefone,cpf,sobre) VALUES(?,?,?,?,?,?,?)";
         try {
@@ -42,7 +42,7 @@ public class BancoNegocios {
             JOptionPane.showMessageDialog(null, " Não houve resposta do banco! ", "Atenção!", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+    //Método para  atualizar contatos via SQL
     public void Atualizar(Atributos at) {
         String query = " UPDATE usuario SET nome = ?, endereco = ?, email = ?, residencial = ?, telefone = ?, cpf = ?, sobre = ?"
                 + " WHERE id = ?";
@@ -66,7 +66,7 @@ public class BancoNegocios {
             JOptionPane.showMessageDialog(null, " Opá! Erro ao atualizar " + ex.getSQLState() + ex.getErrorCode());
         }
     }
-
+    //Método para deletar contatos via SQL
     public void Deletar(int id) {
         String sql = "DELETE FROM usuario WHERE id = ?";
         try {
@@ -85,7 +85,7 @@ public class BancoNegocios {
             JOptionPane.showMessageDialog(null, ex);
         }
     }
-
+    //Método para recriar a tablela contatos via SQL
     public void ApagarAgenda() {
         try {
             Statement stmt = this.conn.getConectMySQl().createStatement();
@@ -124,7 +124,7 @@ public class BancoNegocios {
             }
         }
     }
-
+    //Método para listar contatos via SQL
     public List<Atributos> getContatos(String nome) {
         String sql = "SELECT * FROM usuario WHERE nome LIKE '%" + nome + "%'";
         List<Atributos> lista = new ArrayList<>();

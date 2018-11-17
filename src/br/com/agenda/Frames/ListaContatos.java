@@ -26,15 +26,15 @@ public final class ListaContatos extends javax.swing.JFrame {
                 Statement smt = this.c.getConectMySQl().createStatement();
                 ResultSet rs = smt.executeQuery(sql);
                 while (rs.next()) {
-                    this.jTAListaContatos.append(rs.getInt("id") + " "
+                    this.jTAListaContatos.append(" Id: " + rs.getInt("id") + " "
                             + "\n Nome: " + rs.getString("nome").toUpperCase() 
                             + "\n Endereco: " + rs.getString("endereco").toUpperCase() 
                             + "\n E-mail: " + rs.getString("email").toUpperCase()
                             + "\n Telefone Residencial: " + rs.getString("residencial")
                             + "\n Telefone: " + rs.getString("telefone")
                             + "\n Cpf: " + rs.getString("cpf") 
-                            + "\n Sobre: " + rs.getString("sobre").toUpperCase()
-                            + "\n_______________________________________________  _\n");
+                            + "\n Sobre: \n" + rs.getString("sobre").toUpperCase()
+                            + "\n___________________________________________________\n");
                 }
             } else {
                 JOptionPane.showMessageDialog(null, " Problemas na comunicão com o Banco de dados ");

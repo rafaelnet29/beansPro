@@ -49,7 +49,8 @@ public final class TelaCadastro extends javax.swing.JFrame {
         this.jFTResidencial.setText("");
     }
 
-    /*public void PesquisarID(int id) {
+    /**
+    public void PesquisarID(int id) {
         try {
             if (Integer.parseInt(jTFPesquisar.getText()) == id) {
                 String sql = "SELECT * FROM usuario WHERE id = ?";

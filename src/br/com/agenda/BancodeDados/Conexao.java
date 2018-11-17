@@ -14,7 +14,7 @@ public class Conexao {
     */
     private final String url = "jdbc:mysql://localhost:3306/cad?autoReconnect=true&useSSL=false";
     private final String user = "root";
-    private final String pass = "2907";
+    private final String pass = "";
     private static final String Driverclass = "com.mysql.jdbc.Driver";
 
     /** Conexão com o postgres
